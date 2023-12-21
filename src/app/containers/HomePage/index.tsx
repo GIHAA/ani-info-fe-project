@@ -41,7 +41,7 @@ export function HomePage(props : IHomePageProps) {
 
     return (
         <Container>
-        <h1>AniPedia Home Page</h1>
+        <h1>Ani Info Home Page</h1>
         <AnimePage />
         </Container>
     );
