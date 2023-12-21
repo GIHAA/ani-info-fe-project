@@ -3,7 +3,7 @@ import { GET_ANIME_PAGE } from "./queries";
 import { GetAnimePage } from "./__generated__/GetAnimePage";
 
 class AnimeService {
-  async getAnimePage(page: Number, perPage: 50): Promise<GetAnimePage["Page"]> {
+  async getAnimePage(page: Number, perPage: 100): Promise<GetAnimePage["Page"]> {
     try {
       const response = await apolloClient.query({
         query: GET_ANIME_PAGE,

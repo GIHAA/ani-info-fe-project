@@ -5,32 +5,33 @@ import { useAppSelector } from "../../hooks";
 import { makeSelectAnimePage } from "./selectors";
 
 const AnimePageContainer = styled.div`
-  max-width: 1280%;
+  max-width: 1280px;
   width: 100%;
-  height: 100%;
   display: flex;
-  jystify-content: space-evenly;
+  flex-wrap: wrap; 
+  justify-content: space-around; 
 `;
 
 const AnimeItemContainer = styled.div`
   width: 12em;
   height: 16em;
-  display: flex;
-  flex-direction: column;
+  margin-bottom: 14em; 
 `;
 
 const AnimeCover = styled.div`
   width: 100%;
-  height: 10em;
+  height: 20em;
+  overflow: hidden;
 
   img {
-    width: auto;
+    width: 100%;
     height: 100%;
+    object-fit: cover;
   }
 `;
 
-const AimeTitle = styled.h6`
-  font-size: 19px;
+const AnimeTitle = styled.h6`
+  font-size: 13px;
   margin-top: 8px;
   padding: 0;
   margin-top: 0.5em;
@@ -57,11 +58,11 @@ export function AnimePage() {
         <AnimeItemContainer key={anime?.id}>
           <AnimeCover>
             <img
-              src={anime?.coverImage?.extraLarge ?? ""}
-              alt={anime?.title?.english ?? ""}
+              src={anime?.coverImage?.extraLarge || ""}
+              alt={anime?.title?.english || ""}
             />
           </AnimeCover>
-          <AimeTitle>{anime?.title?.english}</AimeTitle>
+          <AnimeTitle>{anime?.title?.english}</AnimeTitle>
         </AnimeItemContainer>
       ))}
     </AnimePageContainer>

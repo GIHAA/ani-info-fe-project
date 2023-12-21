@@ -26,7 +26,7 @@ export function HomePage(props : IHomePageProps) {
     const { setAnimePage } = actionDispath(useAppDispatch());
 
     const fetchAnimePage = async () => {
-        const animePage = await animeService.getAnimePage( 0 , 50).catch((err) => {
+        const animePage = await animeService.getAnimePage( 0 , 100).catch((err) => {
             console.log("error" + err);
         });
 
@@ -41,7 +41,7 @@ export function HomePage(props : IHomePageProps) {
 
     return (
         <Container>
-        <h1>Home Page</h1>
+        <h1>AniPedia Home Page</h1>
         <AnimePage />
         </Container>
     );
